@@ -1,0 +1,11 @@
+#tabla:last-child {
+    border-bottom: 2px solid blueviolet;
+}
+
+.elementos-lista{
+    border-top: 2px solid blueviolet;
+    border-left: 2px solid blueviolet;
+    border-right: 2px solid blueviolet;
+    background: yellow;
+}
+

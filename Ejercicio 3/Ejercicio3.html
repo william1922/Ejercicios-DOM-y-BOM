@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Ejercicio 3/style-ejercicio3.css">
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+    <h1 class="p-4 text-center text-bg-dark">Ejercicio - 3</h1>
+    <a class="px-5" href="/index.html">Volver a la pagina principal</a>
+    <p class="px-5 pt-4 "> Crea una web con bootstrap y js, que contenga un botón input donde se pueda cargar una tarea
+        y un botón que al ser presionado agregue dicha tarea a una lista, cada elemento ingresado en la lista debe poder
+        ser eliminado con un botón creado para ese fin. </p>
+    <div class="d-flex container-fluid w-75 justify-content-center vh-100">
+        <div class="justify-content-center rounded-start w-50 container-fluid bg-info align-content-center align-items-center d-flex flex-column text-center">
+            <label>Ingrese la tarea a guardar</label>
+            <input type="text" name="tarea" id="tarea">
+            <input type="button" value="Guardar" id="tareaguardar" onclick="iniciador()">
+            <br>
+            <label>Click en Eliminar para eliminar el ultimo elemento de la lista</label>
+            <input type="button" value="Eliminar" id="tareaeliminar" onclick="eliminar()">
+        </div>
+        <div class="rounded-end container-fluid bg-danger align-content-center align-items-center d-flex flex-column text-center">
+            <h2 class="text-light shadow-lg border-bottom">Tareas Pendientes</h2>
+            <table id="tabla" class="w-50">
+            
+            </table>
+        </div>
+    </div>
+    <footer>
+        <h1 class="p-4 text-center text-bg-dark">Ejercicio - 3</h1>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"></script>
+    <script src="funcionalidad-ejercicio3.js" type="text/javascript"></script>
+</body>
+
+</html>

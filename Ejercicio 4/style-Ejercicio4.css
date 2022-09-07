@@ -1,0 +1,12 @@
+.reloj{
+    color: rgb(122, 231, 231);
+    width: 100%;
+    outline: none;
+    border:0px;
+    font-size: 3rem;
+    background: transparent;
+}
+
+body{
+    background-image:repeating-radial-gradient(red, blue)
+}

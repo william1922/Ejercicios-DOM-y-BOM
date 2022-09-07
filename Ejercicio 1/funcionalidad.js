@@ -49,3 +49,11 @@ function adivinar1(){
         document.getElementById("losintentos").value = `Intentos: ${intentos}`
     }
 }
+
+document.querySelector('#botonprobador').addEventListener("click", adivinar1)
+document.querySelector('#intentar5').addEventListener("keyup", (e) => {
+    if (e.keyCode === 13){
+        adivinar1()
+    }
+})
+

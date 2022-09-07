@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Ejercicio 2/style.css">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1 class="p-4 text-center text-bg-dark">Ejercicio - 2</h1>
+    <br>
+    <a class="px-5" href="/index.html">Volver a la Pagina principal</a>
+    <div class="d-flex flex-column px-5 pt-4 justify-content-center">
+        <p class="">Crea una clase llamada Persona que siga las siguientes condiciones:</p>
+        <p>Sus propiedades son: nombre, edad, DNI, sexo (H hombre, M mujer), peso y altura, año de nacimiento. Si
+            quieres añadir alguna propiedad extra puedes hacerlo.</p>
+        <p>Los métodos que se debe poder utilizar son:</p>
+        <p>mostrarGeneracion: este método debe mostrar un mensaje indicando a qué generación pertenece la persona creada
+            y cual es el rasgo característico de esta generación.</p>
+        <p>Para realizar este método tener en cuenta la siguiente tabla de generaciones:</p>
+        <p>esMayorDeEdad: indica si es mayor de edad, devuelve un mensaje indicando que la persona es mayor de edad.</p>
+        <p>mostrarDatos: devuelve toda la información del objeto.</p>
+        <p>Luego crea la interfaz necesaria para que el usuario pueda crear un objeto persona, permitiendo ingresar las
+            propiedades mediante un formulario, también agregar los botones “mostrar generación”, es “mayor de edad” e
+            indicar en un alert el resultado de la función correspondiente.
+        </p>
+    </div>
+    <div class="d-flex col-12 flex-row col-12 justify-content-center">
+        <form id="formulariodepersona" class="d-flex flex-column align-items-center col-3 rounded-2 py-3 bg-secondary">
+            <div>
+                <label >Nombre:</label>
+                <input type="text" name="nombre" id="nombre">
+            </div>
+            <div>
+                <label>Edad:</label>
+                <input type="number" name="edad" id="edad">
+            </div>
+            <div>
+                <label>DNI:</label>
+                <input type="number" name="dni" id="dni">
+            </div>
+            <div>
+                <label>Sexo: (H: Hombre, M: Mujer)</label>
+                <input type="text" id="sexo" name="sexo" toUppercase maxlength="1" class="text-uppercase">
+            </div>
+            <div>
+                <label>Peso:</label>
+                <input type="number" id="peso" name="peso">
+            </div>
+            <div class="">
+                <label>Altura:</label>
+                <input type="number" id="altura" name="altura">
+            </div>
+            <div class="">
+                <label>Año de Nacimiento:</label>
+                <input type="number" id="nacimiento" name="nacimiento">
+            </div>
+            <button class="m-3" id="crear" type="reset">Registrar</button>
+            <label class="pb-2">Click para volver a ingresar datos</label>
+            <button id="reset" type="reset">Reiniciar</button>
+        </form>
+        <div class="d-flex flex-column align-items-center rounded-2 align-items-baseline bg-info col-9">
+            <div class="d-flex flex-row align-self-center">
+            <div class="d-flex flex-column superiormetodos container-fluid m-1 justify-content-center rounded-1">
+                <div class="text-center">
+                    <label">Click para saber a que generacion pertenece.</label>
+                </div>
+                <div class="align-self-center">
+                    <button id="generacionAMostrar">Ver</button>
+                </div>
+            </div>
+            <div class="d-flex flex-column superiormetodos container-fluid m-1 justify-content-center rounded-1 ">
+                <div class="text-center">
+                    <label>Click para conocer si es mayor de edad</label>
+                </div>
+                <div class="align-self-center">
+                    <button id="mayorOmenorEdad">Ver</button>
+                </div>
+            </div>
+            <div class="d-flex flex-column superiormetodos container-fluid m-1 justify-content-center rounded-1 ">
+                <div class="text-center">
+                    <label>Click para ver sus datos</label>
+                </div>
+                <div class="align-self-center">
+                    <button id="mostrarLosDatos">Ver</button>
+                </div>
+            </div>
+            </div>
+            <div class="container-fluid bg-success d-flex justify-content-center align-items-center rounded-bottom h-100 w-100">
+                <h1 id="contenedorDeMetodos" class="text-center text-light"></h1>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h1 class="p-4 text-center text-bg-dark">Ejercicio - 2</h1>
+    </footer>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+            integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+            integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+            crossorigin="anonymous"></script>
+        <script src="/Ejercicio 2/funcionalidad.js" type="text/javascript"></script>
+    </body>
+</html>
