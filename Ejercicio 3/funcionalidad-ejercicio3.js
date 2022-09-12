@@ -1,9 +1,6 @@
 
 
-let hora = [];
-for (var i = 4; i < 24; i++) {
-    hora += (Date()[i])
-}
+
 
 let valorDelImput = document.querySelector('#tarea');
 let tareas = document.querySelector('#tabla');
@@ -11,7 +8,10 @@ const iniciador = () => {
     crearTareas = document.createElement('tr');
     crearTareasLinea = document.createElement('td');
     crearTareasLinea.innerHTML = valorDelImput.value;
-
+    let hora = [];
+    for (var i = 4; i < 24; i++) {
+        hora += (Date()[i])
+    }
     crearTareasLinea.setAttribute("class", "elementos-lista col-9 px-4");
     crearTareas.appendChild(crearTareasLinea);
     crearTareas.appendChild(crearTareasLinea.cloneNode(true))
@@ -24,29 +24,29 @@ const iniciador = () => {
 
 valorDelImput.addEventListener("keyup", (e) => {
     if (e.keyCode === 13) {
-        if(valorDelImput.value == ''){
+        if (valorDelImput.value == '') {
             alert("Ingrese la tarea a guardar")
         } else {
-        iniciador()
-        valorDelImput.value = ""
+            iniciador()
+            valorDelImput.value = ""
         }
     }
 })
 
 const botoncrear = document.querySelector('#tareaguardar')
-botoncrear.addEventListener("click", () =>{
-    if(valorDelImput.value == ''){
+botoncrear.addEventListener("click", () => {
+    if (valorDelImput.value == '') {
         alert("Ingrese la tarea a guardar")
     } else {
-    iniciador()
-    valorDelImput.value = ""
+        iniciador()
+        valorDelImput.value = ""
     }
 })
 
 const eliminador = document.querySelector('#tareaeliminar')
 
 eliminador.addEventListener("click", () => {
-   let aEliminar = tareas.lastChild
+    let aEliminar = tareas.lastChild
     if (aEliminar == null) {
         alert('No a ingresado tareas')
     } else {
