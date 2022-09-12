@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Ejercicio 2/style.css">
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">  
+        <link rel="stylesheet" href="/Ejercicio 2/style.css">
     <title>Ejercicio 2</title>
 </head>
 <body>
@@ -30,8 +30,9 @@
             indicar en un alert el resultado de la función correspondiente.
         </p>
     </div>
-    <div class="d-flex col-12 flex-row col-12 justify-content-center">
-        <form id="formulariodepersona" class="d-flex flex-column align-items-center col-3 rounded-2 py-3 bg-secondary">
+    <div class="d-flex justify-content-center">
+    <div class="d-flex col-12 flex-row cuerpototal justify-content-center">
+        <form id="formulariodepersona" class="d-flex flex-column align-items-center col-3 rounded-start py-3">
             <div>
                 <label >Nombre:</label>
                 <input type="text" name="nombre" id="nombre">
@@ -46,7 +47,7 @@
             </div>
             <div>
                 <label>Sexo: (H: Hombre, M: Mujer)</label>
-                <input type="text" id="sexo" name="sexo" toUppercase maxlength="1" class="text-uppercase">
+                <input type="text" id="sexo" name="sexo" toUppercase maxlength="1">
             </div>
             <div>
                 <label>Peso:</label>
@@ -60,41 +61,36 @@
                 <label>Año de Nacimiento:</label>
                 <input type="number" id="nacimiento" name="nacimiento">
             </div>
-            <button class="m-3" id="crear" type="reset">Registrar</button>
-            <label class="pb-2">Click para volver a ingresar datos</label>
-            <button id="reset" type="reset">Reiniciar</button>
+            <button class="m-3 rounded-1" id="crear" type="reset">Registrar</button>
+            <label class="pb-2 h5">Ingresar datos otra vez</label>
+            <button id="reset" class="rounded" type="reset">Reiniciar</button>
         </form>
-        <div class="d-flex flex-column align-items-center rounded-2 align-items-baseline bg-info col-9">
-            <div class="d-flex flex-row align-self-center">
-            <div class="d-flex flex-column superiormetodos container-fluid m-1 justify-content-center rounded-1">
+        <div class="d-flex flex-column rounded-end col-9">
+            <div class="d-flex flex-row h-25 ">
+            <div id="generacionAMostrar" class="d-flex flex-column superiormetodos justify-content-center col-4">
                 <div class="text-center">
-                    <label">Click para saber a que generacion pertenece.</label>
-                </div>
-                <div class="align-self-center">
-                    <button id="generacionAMostrar">Ver</button>
+                    <label id="labelgeneracion">Generacion a la que pertenece.</label>
                 </div>
             </div>
-            <div class="d-flex flex-column superiormetodos container-fluid m-1 justify-content-center rounded-1 ">
+            <div id="mayorOmenorEdad" class="d-flex flex-column superiormetodos col-4 justify-content-center">
                 <div class="text-center">
-                    <label>Click para conocer si es mayor de edad</label>
-                </div>
-                <div class="align-self-center">
-                    <button id="mayorOmenorEdad">Ver</button>
+                    <label id="labeledad">Es mayor o menor de edad?</label>
                 </div>
             </div>
-            <div class="d-flex flex-column superiormetodos container-fluid m-1 justify-content-center rounded-1 ">
+            <div id="mostrarLosDatos" class="d-flex flex-column superiormetodos col-4 justify-content-center">
                 <div class="text-center">
-                    <label>Click para ver sus datos</label>
+                    <label id="labeldatos">Ver los datos ingresados</label>
                 </div>
-                <div class="align-self-center">
-                    <button id="mostrarLosDatos">Ver</button>
                 </div>
             </div>
+            <div class="container-fluid mostradorMetodos d-flex flex-column justify-content-evenly align-items-center h-100 w-100">
+                <!-- <h1>Ingrese sus datos y elija lo que quiera ver</h1>
+                <img src="/img/generacionZ.png"> -->
             </div>
-            <div class="container-fluid bg-success d-flex justify-content-center align-items-center rounded-bottom h-100 w-100">
-                <h1 id="contenedorDeMetodos" class="text-center text-light"></h1>
             </div>
+            
         </div>
+    </div>
     </div>
     <footer>
         <h1 class="p-4 text-center text-bg-dark">Ejercicio - 2</h1>

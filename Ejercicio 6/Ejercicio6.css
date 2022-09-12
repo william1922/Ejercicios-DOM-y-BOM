@@ -17,7 +17,7 @@ input{
     font-size: 60px;
     width: 80%;
     border: none;
-    background: none;
+    background: rgba(241, 237, 229, 0.103);
     align-self: center;
     outline: none;
 }

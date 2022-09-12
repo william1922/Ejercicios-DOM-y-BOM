@@ -1,11 +1,64 @@
 #tabla:last-child {
-    border-bottom: 2px solid blueviolet;
+    border-bottom: 1px solid #708865;
 }
 
 .elementos-lista{
-    border-top: 2px solid blueviolet;
-    border-left: 2px solid blueviolet;
-    border-right: 2px solid blueviolet;
-    background: yellow;
+    border-left: 1px solid #708865;
+    border-top: 1px solid #708865;
+    background: #FBFBBF;
+    font-weight: 600;
+    color:#088EAA;
 }
 
+#tabla{
+    table-layout: fixed;
+    width: 100%;
+}
+
+.elementos-lista1{
+    background: #FBFBBF;
+    font-weight: 500;
+    color: #7c73fa;
+    border-top: 1px solid #708865;
+    border-right: 1px solid #708865;
+    border-left: 1px solid #708865;
+}
+
+.cuerpotarea{
+    background: #CDED8E;
+    overflow: auto;
+    border-bottom: 2px gray solid;
+}
+
+.cuerpotarea h2{
+    color: #8B5A5B;
+    border-bottom:1px solid #e99596;
+}
+
+.cuerpousuario {
+    border-bottom: 2px gray solid;
+}
+
+.cuerpousuario label{
+    color:#D4F3B7;
+}
+
+#tarea{
+    outline: none;
+    border:none;
+}
+
+#tareaguardar, #tareaeliminar{
+    background: #A8F482;
+    font-weight: 600;
+    width: 50%;
+    color: #8B5A5B;
+    border: 1px rgb(228, 101, 101) solid ;
+    transition: all 0.2s;
+}
+
+#tareaguardar:hover, #tareaeliminar:hover{
+    opacity: 0.8;
+    font-weight: 600;
+    color: #708865;
+}

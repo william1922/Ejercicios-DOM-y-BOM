@@ -18,20 +18,25 @@
     <p class="px-5 pt-4 "> Crea una web con bootstrap y js, que contenga un botón input donde se pueda cargar una tarea
         y un botón que al ser presionado agregue dicha tarea a una lista, cada elemento ingresado en la lista debe poder
         ser eliminado con un botón creado para ese fin. </p>
-    <div class="d-flex container-fluid w-75 justify-content-center vh-100">
-        <div class="justify-content-center rounded-start w-50 container-fluid bg-info align-content-center align-items-center d-flex flex-column text-center">
-            <label>Ingrese la tarea a guardar</label>
-            <input type="text" name="tarea" id="tarea">
-            <input type="button" value="Guardar" id="tareaguardar" onclick="iniciador()">
-            <br>
-            <label>Click en Eliminar para eliminar el ultimo elemento de la lista</label>
-            <input type="button" value="Eliminar" id="tareaeliminar" onclick="eliminar()">
+    <div class="d-flex container-fluid w-75 justify-content-center mb-2 vh-100">
+        <div class="justify-content-center cuerpousuario rounded-start w-50 container-fluid bg-info align-items-center d-flex flex-column text-center">
+            <div class="d-flex flex-column align-items-center mb-4">
+            <label class="py-1 h4">Ingrese la tarea a guardar</label>
+            <input type="text" class="rounded text-black-50" name="tarea" id="tarea">
+            <input type="button" value="Guardar" id="tareaguardar" class="mt-2 rounded">
+            </div>
+            <div class="mt-4">
+            <label class="h4">Eliminar ultima tarea de la lista</label>
+            <input type="button" value="Eliminar" class="mt-2 rounded" id="tareaeliminar">
+            </div>
         </div>
-        <div class="rounded-end container-fluid bg-danger align-content-center align-items-center d-flex flex-column text-center">
-            <h2 class="text-light shadow-lg border-bottom">Tareas Pendientes</h2>
-            <table id="tabla" class="w-50">
+        <div class="rounded-end container-fluid cuerpotarea align-content-center align-items-center d-flex flex-column">
+            <h2 class="pt-3">Tareas Pendientes</h2>
+            <div  class="d-flex flex-column justify-content-center align-content-center align-items-center align-self-center">
+            <table id="tabla" class="">
             
             </table>
+            </div>
         </div>
     </div>
     <footer>

@@ -1,5 +1,10 @@
 
 let sujetos =[];
+let imagen = document.createElement('img')
+let textonuevo = document.createElement('h1');
+textonuevo.setAttribute("class", "text-center")
+imagen.setAttribute("class", "rounded-5")
+let nodo2 = document.querySelector('.mostradorMetodos')
 
 const crearObjeto = () =>{
 class Persona {
@@ -14,29 +19,54 @@ class Persona {
     }
     mostrarGeneracion(){
         if(this.nacimiento > 1993 && this.nacimiento < 2011){
-            document.querySelector('#contenedorDeMetodos').innerHTML = this.nombre + " Es de la generacion Z y el rasgo de esta generacion es que son Irreverentes"
+            textonuevo.innerHTML =  this.nombre + " Es de la generacion Z y el rasgo de esta generacion es que son Irreverentes"
+            imagen.setAttribute("src","/img/generacionZ.png")
+            nodo2.appendChild(textonuevo)
+            nodo2.appendChild(imagen)
         } else if (this.nacimiento > 1980 && this.nacimiento < 1994){
-            document.querySelector('#contenedorDeMetodos').innerHTML = this.nombre + " Es de la generacion Y-Millennials y el rasgo de esta generacion es la Frustracion"
+            textonuevo.innerHTML = this.nombre + " Es de la generacion Y-Millennials y el rasgo de esta generacion es la Frustracion";
+            imagen.setAttribute("src", "/img/generacionY.png")
+            nodo2.appendChild(textonuevo)
+            nodo2.appendChild(imagen)
         } else if (this.nacimiento > 1968 && this.nacimiento < 1981){
-            document.querySelector('#contenedorDeMetodos').innerHTML = this.nombre + " Es de la generacion X y el rasgo de esta generacion es la Obsesion por el Exito"
+            textonuevo.innerHTML = this.nombre + " Es de la generacion X y el rasgo de esta generacion es la Obsesion por el Exito"
+            imagen.setAttribute("src", "/img/generacionX.png")
+            nodo2.appendChild(textonuevo)
+            nodo2.appendChild(imagen)
         } else if (this.nacimiento > 1948 && this.nacimiento < 1969){
-            document.querySelector('#contenedorDeMetodos').innerHTML = this.nombre + " Es de la generacion Baby Boom y el rasgo de esta generacion es la Ambicion"
+            textonuevo.innerHTML = this.nombre + " Es de la generacion Baby Boom y el rasgo de esta generacion es la Ambicion"
+            imagen.setAttribute("src", "/img/generacionBB.png")
+            nodo2.appendChild(textonuevo)
+            nodo2.appendChild(imagen)
         } else if (this.nacimiento > 1929 && this.nacimiento < 1949){
-            document.querySelector('#contenedorDeMetodos').innerHTML = this.nombre + " Es de la generacion Silent Generation(Los niños de la posguerra) y el rasgo de esta generacion es  la Austeridad"
+            textonuevo.innerHTML = this.nombre + " Es de la generacion Silent Generation(Los niños de la posguerra) y el rasgo de esta generacion es  la Austeridad"
+            imagen.setAttribute("src", "/img/generacionSG.png")
+            nodo2.appendChild(textonuevo)
+            nodo2.appendChild(imagen)
         }
     }
     esMayorDeEdad(){
         if(this.edad < 18){
-            document.querySelector('#contenedorDeMetodos').innerHTML = " Es menor de edad"
+            textonuevo.innerHTML = " Es menor de edad"
+            nodo2.appendChild(textonuevo)
+            if(nodo2.getElementsByTagName('img').length > 0){
+                nodo2.removeChild(imagen)
+                }
         } else {
-            document.querySelector('#contenedorDeMetodos').innerHTML =  this.nombre + " Es menor de edad"
+            textonuevo.innerHTML = " Es mayor de edad"
+            nodo2.appendChild(textonuevo)
+            if(nodo2.getElementsByTagName('img').length > 0){
+            nodo2.removeChild(imagen)
+            }
         }
     }
     mostrarDatos(){
-        document.querySelector('#contenedorDeMetodos').innerHTML = "Nombre: " + this.nombre + "<br>" + "Edad: " + this.edad + "<br>" + "DNI: " + this.dni + "<br>" + "Sexo: " + this.sexo + "<br>" + "Peso: " + this.peso + " Kilos" + "<br>" + "Altura: " + this.altura + " centimetros" +"<br>" + "Año de nacimiento: " + this.nacimiento
+        textonuevo.innerHTML = "Nombre: " + this.nombre + "<br>" + "Edad: " + this.edad + "<br>" + "DNI: " + this.dni + "<br>" + "Sexo: " + this.sexo + "<br>" + "Peso: " + this.peso + " Kilos" + "<br>" + "Altura: " + this.altura + " centimetros" +"<br>" + "Año de nacimiento: " + this.nacimiento;
+        if(nodo2.getElementsByTagName('img').length > 0){
+            nodo2.removeChild(imagen)
+            }
     }
 }
-
 
 
 
@@ -70,6 +100,11 @@ if (nombre.includes(0) || nombre.includes(1) || nombre.includes(2) || nombre.inc
     alert('Ingrese el año de nacimiento correctamente')
     return false
 } else {
+    if(sexo == "h"){
+        sexo = "Hombre"
+    } else{
+        sexo = "Mujer"
+    }
     var sujeto = new Persona(nombre, edad, dni, sexo, peso, altura, nacimiento)
     sujetos.push(sujeto)
     document.querySelector('#nombre').toggleAttribute("disabled")
@@ -130,15 +165,28 @@ for(var i = 0; i < formularioDivs.getElementsByTagName("input").length; i++){
 
 const contenedorDeMetodos = document.querySelector('#contenedorDeMetodos')
 
-
 const generacionAMostrar = document.querySelector('#generacionAMostrar');
 
+const labelgeneracion = document.querySelector('#labelgeneracion');
+
+const labeledad = document.querySelector('#labeledad');
+
+const labeldatos = document.querySelector('#labeldatos')
 generacionAMostrar.addEventListener('click', () => {
     if(sujetos.length == 0){
         alert('No ha Ingresado sus datos')
     } else {
     sujetos[0].mostrarGeneracion()
     }
+})
+
+generacionAMostrar.addEventListener("mouseover", e => {
+    labelgeneracion.style.scale= "1.2"
+    
+    labelgeneracion.style.transition = "all 0.5s"
+})
+generacionAMostrar.addEventListener("mouseleave", e => {
+    labelgeneracion.style.scale= "1"
 })
 
 const mayorOMenorEdad = document.querySelector('#mayorOmenorEdad');
@@ -151,6 +199,14 @@ mayorOMenorEdad.addEventListener('click', () => {
     }
 })
 
+mayorOMenorEdad.addEventListener("mouseover", e => {
+    labeledad.style.transition = "all 0.5s"
+    labeledad.style.scale= "1.2"
+})
+mayorOMenorEdad.addEventListener("mouseleave", e => {
+    labeledad.style.scale= "1"
+})
+
 const verDatos = document.querySelector('#mostrarLosDatos')
 
 verDatos.addEventListener('click', () => {
@@ -161,6 +217,18 @@ verDatos.addEventListener('click', () => {
     }
 })
 
+verDatos.addEventListener("mouseover", e => {
+    labeldatos.style.scale= "1.2"
+    labeldatos.style.transition = "all 0.5s"
+})
+verDatos.addEventListener("mouseleave", e => {
+    labeldatos.style.scale = "1"
+})
 
+const botonRegistro = document.querySelector('#crear');
+
+botonRegistro.addEventListener('click', () =>{
+    crearObjeto()
+})
 
 

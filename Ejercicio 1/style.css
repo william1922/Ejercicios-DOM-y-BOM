@@ -77,3 +77,232 @@ background-color: rgb(97, 218, 191);
 .intentos::placeholder{
     color: rgb(189, 238, 160);
 }
+
+#frio1{
+    color: rgba(0, 255, 255, 0.904);
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 3rem;
+   font-family: 'Silkscreen', cursive;
+   transition: all 1s;
+   -webkit-background-clip: text;
+    -webkit-text-stroke-width: 0.9px;
+    -webkit-text-stroke-color: rgb(3, 6, 209);
+    opacity: 0;
+}
+
+#frio2{
+    color: rgba(0, 255, 255, 0.904);
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    font-size: 3rem;
+   font-family: 'Silkscreen', cursive;
+   transition: all 1s;
+   -webkit-background-clip: text;
+    -webkit-text-stroke-width: 0.9px;
+    -webkit-text-stroke-color: rgb(3, 6, 209);
+    opacity: 0;
+}
+
+
+#frio3{
+    color: rgba(0, 255, 255, 0.904);
+    position: absolute;
+    top: 25%;
+    left: 2%;
+    font-size: 3rem;
+   font-family: 'Silkscreen', cursive;
+   transition: all 1s;
+   -webkit-background-clip: text;
+    -webkit-text-stroke-width: 0.9px;
+    -webkit-text-stroke-color: rgb(3, 6, 209);
+    opacity: 0;
+}
+
+
+#frio4{
+    color: rgba(0, 255, 255, 0.904);
+    position: absolute;
+    top: 35%;
+    left: 16%;
+    font-size: 3rem;
+   font-family: 'Silkscreen', cursive;
+   transition: all 1s;
+   -webkit-background-clip: text;
+    -webkit-text-stroke-width: 0.9px;
+    -webkit-text-stroke-color: rgb(3, 6, 209);
+    opacity: 0;
+}
+
+
+#frio5{
+    color: rgba(0, 255, 255, 0.904);
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    font-size: 3rem;
+   font-family: 'Silkscreen', cursive;
+   transition: all 1s;
+   -webkit-background-clip: text;
+    -webkit-text-stroke-width: 0.9px;
+    -webkit-text-stroke-color: rgb(3, 6, 209);
+    opacity: 0;
+}
+
+
+#frio6{
+    color: rgba(0, 255, 255, 0.904);
+    position: absolute;
+    top: 55%;
+    left: 15%;
+    font-size: 3rem;
+   font-family: 'Silkscreen', cursive;
+   transition: all 1s;
+   -webkit-background-clip: text;
+    -webkit-text-stroke-width: 0.9px;
+    -webkit-text-stroke-color: rgb(3, 6, 209);
+    opacity: 0;
+}
+
+
+#frio7{
+    color: rgba(0, 255, 255, 0.904);
+    position: absolute;
+    top: 65%;
+    left: 5%;
+    font-size: 3rem;
+   font-family: 'Silkscreen', cursive;
+   transition: all 1s;
+   -webkit-background-clip: text;
+    -webkit-text-stroke-width: 0.9px;
+    -webkit-text-stroke-color: rgb(3, 6, 209);
+    opacity: 0;
+}
+
+#frio8{
+    color: rgba(0, 255, 255, 0.904);
+    position: absolute;
+    top: 75%;
+    left: 12%;
+    font-size: 3rem;
+   font-family: 'Silkscreen', cursive;
+   transition: all 1s;
+   -webkit-background-clip: text;
+    -webkit-text-stroke-width: 0.9px;
+    -webkit-text-stroke-color: rgb(3, 6, 209);
+    opacity: 0;
+}
+
+#caliente1{
+    color: rgba(236, 34, 34, 0.904);
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 3rem;
+   font-family: 'Silkscreen', cursive;
+   transition: all 1s;
+   -webkit-background-clip: text;
+    -webkit-text-stroke-width: 0.9px;
+    -webkit-text-stroke-color: rgb(238, 236, 93);
+    opacity: 0;
+}
+
+#caliente2{
+    color: rgba(236, 34, 34, 0.904);
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    font-size: 3rem;
+   font-family: 'Silkscreen', cursive;
+   transition: all 1s;
+   -webkit-background-clip: text;
+    -webkit-text-stroke-width: 0.9px;
+    -webkit-text-stroke-color: rgb(238, 236, 93);
+    opacity: 0;
+}
+
+#caliente3{
+    color: rgba(236, 34, 34, 0.904);
+    position: absolute;
+    top: 25%;
+    right: 2%;
+    font-size: 3rem;
+   font-family: 'Silkscreen', cursive;
+   transition: all 1s;
+   -webkit-background-clip: text;
+    -webkit-text-stroke-width: 0.9px;
+    -webkit-text-stroke-color: rgb(238, 236, 93);
+    opacity: 0;
+}
+
+#caliente4{
+    color: rgba(236, 34, 34, 0.904);
+    position: absolute;
+    top: 35%;
+    right: 16%;
+    font-size: 3rem;
+   font-family: 'Silkscreen', cursive;
+   transition: all 1s;
+   -webkit-background-clip: text;
+    -webkit-text-stroke-width: 0.9px;
+    -webkit-text-stroke-color: rgb(238, 236, 93);
+    opacity: 0;
+}
+
+#caliente5{
+    color: rgba(236, 34, 34, 0.904);
+    position: absolute;
+    top: 45%;
+    right: 5%;
+    font-size: 3rem;
+   font-family: 'Silkscreen', cursive;
+   transition: all 1s;
+   -webkit-background-clip: text;
+    -webkit-text-stroke-width: 0.9px;
+    -webkit-text-stroke-color: rgb(238, 236, 93);
+    opacity: 0;
+}
+
+#caliente6{
+    color: rgba(236, 34, 34, 0.904);
+    position: absolute;
+    top: 55%;
+    right: 15%;
+    font-size: 3rem;
+   font-family: 'Silkscreen', cursive;
+   transition: all 1s;
+   -webkit-background-clip: text;
+    -webkit-text-stroke-width: 0.9px;
+    -webkit-text-stroke-color: rgb(238, 236, 93);
+    opacity: 0;
+}
+
+#caliente7{
+    color: rgba(236, 34, 34, 0.904);
+    position: absolute;
+    top: 65%;
+    right: 5%;
+    font-size: 3rem;
+   font-family: 'Silkscreen', cursive;
+   transition: all 1s;
+   -webkit-background-clip: text;
+    -webkit-text-stroke-width: 0.9px;
+    -webkit-text-stroke-color: rgb(238, 236, 93);
+    opacity: 0;
+}
+
+#caliente8{
+    color: rgba(236, 34, 34, 0.904);
+    position: absolute;
+    top: 75%;
+    right: 12%;
+    font-size: 3rem;
+   font-family: 'Silkscreen', cursive;
+   transition: all 1s;
+   -webkit-background-clip: text;
+    -webkit-text-stroke-width: 0.9px;
+    -webkit-text-stroke-color: rgb(238, 236, 93);
+    opacity: 0;
+}

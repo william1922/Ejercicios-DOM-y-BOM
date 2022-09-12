@@ -1,0 +1,65 @@
+body{
+    background: linear-gradient(45deg,#EFE584, #848EEF);
+}
+
+.bodydeejercicios{
+    height:70vh;
+    width: 85%;
+}
+
+.tareasizquierda a{
+    text-shadow: 0px 0px 2px #EFE584;
+    background: #391E46;
+    border-top: 2px solid #50D3E5;
+    border-left: 2px solid #50D3E5;
+    transition: 0.2s;
+}
+
+.tareasizquierda a:hover{
+    background: #391e46c2;
+   text-shadow: none;
+}
+
+.tareasizquierda a:first-child{
+    border-top-left-radius: 10%;
+}
+
+.tareasizquierda a:last-child{
+    border-bottom: 2px solid #50D3E5;
+    border-bottom-left-radius: 10%;
+}
+
+.tareasizquierda h2, .tareasderecha h2{
+    color: #DCEECD;
+}
+
+.cuerpomedio{
+    background:repeating-radial-gradient(#50D3E5, #F9FDFE);
+}
+
+.tareasderecha a{
+    text-shadow: 0px 0px 2px #EFE584;
+    background: #391E46;
+    border-top: 2px solid #50D3E5;
+    border-right: 2px solid #50D3E5;
+    transition: 0.2s;
+}
+
+.tareasderecha a:hover{
+    background: #391e46c2;
+    text-shadow: none;
+}
+
+.tareasderecha a:first-child{
+    border-top-right-radius: 10%;
+}
+
+.tareasderecha a:last-child{
+    border-bottom: 2px solid #50D3E5;
+    border-bottom-right-radius: 10%;
+}
+
+.textomostrar{
+    color:#fa4d4d;
+    text-shadow: 0px 0px 2px;
+}
