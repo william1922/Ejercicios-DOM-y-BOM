@@ -5,6 +5,7 @@ let textonuevo = document.createElement('h1');
 textonuevo.setAttribute("class", "text-center")
 imagen.setAttribute("class", "rounded-5")
 let nodo2 = document.querySelector('.mostradorMetodos')
+let arrayDatos = JSON.parse(localStorage.getItem("listaGeneracion")) || [];
 
 const crearObjeto = () =>{
 class Persona {
@@ -68,8 +69,6 @@ class Persona {
     }
 }
 
-
-
 let nombre = document.querySelector('#nombre').value;
 let edad = document.querySelector('#edad').value;
 let dni = document.querySelector('#dni').value;
@@ -114,8 +113,11 @@ if (nombre.includes(0) || nombre.includes(1) || nombre.includes(2) || nombre.inc
     document.querySelector('#peso').toggleAttribute("disabled")
     document.querySelector('#altura').toggleAttribute("disabled")
     document.querySelector('#nacimiento').toggleAttribute("disabled")
+    textonuevo.innerHTML = 'Hola ' + nombreE.value
+     nodo2.appendChild(textonuevo)
+     arrayDatos.push(sujeto)
+     localStorage.setItem("listaGeneracion", JSON.stringify(arrayDatos))
 }
-
 }
 
 const reiniciar = document.querySelector('#reset');
@@ -123,12 +125,6 @@ const reiniciar = document.querySelector('#reset');
 reiniciar.addEventListener('click', () => {
     location.reload();
 })
-//  document.querySelectorAll('[type="number"]').forEach(input => {
-//      input.oninput = () => {
-//          if (input.value > 60) input.value = 60;
-//          if (input.value < 0 ) input.value = 0
-//     }
-// })
 
 const nombreE = document.querySelector('#nombre')
 const edadE = document.querySelector('#edad')
@@ -140,7 +136,6 @@ const nacimientoE = document.querySelector('#nacimiento')
 
 const arraE = [nombreE, edadE, dniE, sexoE, pesoE, alturaE, nacimientoE];
 
-
 for(var i = 0; i < arraE.length; i++){
     arraE[i].addEventListener("keyup", (e) => {
         if (e.keyCode === 13){
@@ -148,10 +143,6 @@ for(var i = 0; i < arraE.length; i++){
         }
     })
 }
-
-//for(var i = 0; i < arraE.length; i++){
-    
-//}
 
 let formularioDivs = document.getElementById('formulariodepersona')
 
@@ -231,4 +222,13 @@ botonRegistro.addEventListener('click', () =>{
     crearObjeto()
 })
 
+const tabla = document.querySelector("#tabla-sujetos")
 
+arrayDatos.forEach(element => {
+    tabla.innerHTML += `<tr>
+    <td class="border">${element.nombre}</td>
+    <td class="border">${element.nacimiento}</td>
+    <td class="border">${element.edad}</td>
+    <td class="border">Edad: ${element.edad} <br> Sexo: ${element.sexo}<br> DNI: ${element.dni} <br> Peso: ${element.peso} - Altura:${element.altura}</td>
+</tr>`
+})

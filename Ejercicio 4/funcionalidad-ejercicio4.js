@@ -5,8 +5,6 @@ const hora = document.querySelector('#reloj')
 const notar = () => {
     let arrayDia = [];
 
-
-
     let arrayDiatest = [];
     let diaIng = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
     let diaEsp = ["Lunes ", "Martes ", "Miercoles ", "Jueves ", "Viernes ", "Sabado ", "Domingo "]

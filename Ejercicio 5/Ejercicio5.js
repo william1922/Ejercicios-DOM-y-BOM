@@ -1,4 +1,3 @@
-
 const horas = document.querySelector('#horas');
 const minutos = document.querySelector('#minutos');
 const segundos = document.querySelector('#segundos');
@@ -36,5 +35,4 @@ document.querySelector('#reset').addEventListener("click", () => {
     horas.value = 0;
     centecimas.value = 0
 })
-
 

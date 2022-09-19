@@ -1,11 +1,3 @@
-//  document.querySelectorAll('[type="number"]').forEach(input => {
-//      input.oninput = () => {
-//          if (input.value > 60) input.value = 60;
-//          if (input.value < 0 ) input.value = 0
-//     }
-// })
-
-
 let maximoHoras = document.getElementById('horas');
 let maximoMinutos = document.getElementById('minutos');
 let maximoSegundos = document.getElementById('segundos')
@@ -24,7 +16,6 @@ maximoSegundos.oninput = () => {
     if (maximoSegundos.value > 60) maximoSegundos.value = 60;
     if (maximoSegundos.value < 0 ) maximoSegundos.value = 0;
 }
-
 
 const temporizar = () => {
 

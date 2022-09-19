@@ -86,3 +86,7 @@ input{
 #reset{
     border: none;
 }
+
+#contenedorTabla{
+    overflow:auto;
+}

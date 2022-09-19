@@ -1,26 +1,41 @@
-
-
-
-
 let valorDelImput = document.querySelector('#tarea');
 let tareas = document.querySelector('#tabla');
+let arrayTareas = JSON.parse(localStorage.getItem("listaTareas")) || [];
+class TareasLista {
+    constructor(texto, fecha) {
+        this.texto = texto,
+            this.fecha = fecha
+    }
+}
+
 const iniciador = () => {
-    crearTareas = document.createElement('tr');
-    crearTareasLinea = document.createElement('td');
-    crearTareasLinea.innerHTML = valorDelImput.value;
+
+    //crearTareasLinea.innerHTML = valorDelImput.value;
     let hora = [];
     for (var i = 4; i < 24; i++) {
         hora += (Date()[i])
     }
-    crearTareasLinea.setAttribute("class", "elementos-lista col-9 px-4");
-    crearTareas.appendChild(crearTareasLinea);
-    crearTareas.appendChild(crearTareasLinea.cloneNode(true))
-    crearTareas.getElementsByTagName("td")[1].innerHTML = hora;
-    crearTareas.getElementsByTagName("td")[1].setAttribute("class", "elementos-lista1 text-center col-3")
-    tareas.appendChild(crearTareas);
+    const filasTarea = new TareasLista(valorDelImput.value, hora)
+    arrayTareas.push(filasTarea)
+
+    localStorage.setItem("listaTareas", JSON.stringify(arrayTareas))
     valorDelImput.value = ""
+    location.reload()
 }
 
+const crearTareasLista = () => {
+    arrayTareas.forEach(element => {
+        crearTareas = document.createElement('tr');
+        crearTareasLinea = document.createElement('td');
+        crearTareasLinea.innerHTML = element.texto
+        crearTareasLinea.setAttribute("class", "elementos-lista col-9 px-4");
+        crearTareas.appendChild(crearTareasLinea);
+        crearTareas.appendChild(crearTareasLinea.cloneNode(true))
+        crearTareas.getElementsByTagName("td")[1].innerHTML = element.fecha
+        crearTareas.getElementsByTagName("td")[1].setAttribute("class", "elementos-lista1 text-center col-3")
+        tareas.appendChild(crearTareas);
+    });
+}
 
 valorDelImput.addEventListener("keyup", (e) => {
     if (e.keyCode === 13) {
@@ -34,6 +49,7 @@ valorDelImput.addEventListener("keyup", (e) => {
 })
 
 const botoncrear = document.querySelector('#tareaguardar')
+
 botoncrear.addEventListener("click", () => {
     if (valorDelImput.value == '') {
         alert("Ingrese la tarea a guardar")
@@ -46,10 +62,13 @@ botoncrear.addEventListener("click", () => {
 const eliminador = document.querySelector('#tareaeliminar')
 
 eliminador.addEventListener("click", () => {
-    let aEliminar = tareas.lastChild
-    if (aEliminar == null) {
+    if (arrayTareas.length == 0) {
         alert('No a ingresado tareas')
     } else {
-        tareas.removeChild(aEliminar)
+        arrayTareas.pop()
+        localStorage.setItem("listaTareas", JSON.stringify(arrayTareas))
+        location.reload()
     }
 })
+
+crearTareasLista()
