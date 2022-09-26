@@ -9,8 +9,6 @@ class TareasLista {
 }
 
 const iniciador = () => {
-
-    //crearTareasLinea.innerHTML = valorDelImput.value;
     let hora = [];
     for (var i = 4; i < 24; i++) {
         hora += (Date()[i])
@@ -22,6 +20,7 @@ const iniciador = () => {
     valorDelImput.value = ""
     location.reload()
 }
+
 
 const crearTareasLista = () => {
     arrayTareas.forEach(element => {

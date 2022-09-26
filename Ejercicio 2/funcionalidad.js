@@ -1,4 +1,5 @@
-
+console.log("Hola")
+let holaMundo = 45
 let sujetos =[];
 let imagen = document.createElement('img')
 let textonuevo = document.createElement('h1');
@@ -7,16 +8,18 @@ imagen.setAttribute("class", "rounded-5")
 let nodo2 = document.querySelector('.mostradorMetodos')
 let arrayDatos = JSON.parse(localStorage.getItem("listaGeneracion")) || [];
 
+
 const crearObjeto = () =>{
 class Persona {
-    constructor(nombre, edad, dni, sexo, peso, altura, nacimiento){
+    constructor(nombre, edad, dni, sexo, peso, altura, nacimiento, codigoUnico){
         this.nombre = nombre,
         this.edad = edad,
         this.dni = dni,
         this.sexo = sexo,
         this.peso = peso,
         this.altura = altura,
-        this.nacimiento = nacimiento
+        this.nacimiento = nacimiento,
+        this.codigo = codigoUnico
     }
     mostrarGeneracion(){
         if(this.nacimiento > 1993 && this.nacimiento < 2011){
@@ -77,6 +80,37 @@ let peso = document.querySelector('#peso').value;
 let altura = document.querySelector('#altura').value;
 let nacimiento = document.querySelector('#nacimiento').value;
 
+let codigoLetrasm = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+let codigoLetrasM = [];
+
+for(var i = 0; i< codigoLetrasm.length; i++){
+    codigoLetrasM.push(codigoLetrasm[i].toLocaleUpperCase())
+}
+
+const arregloDeCodigos = []
+arregloDeCodigos.push(codigoLetrasm)
+arregloDeCodigos.push(codigoLetrasM)
+
+const generadorCodigo1 = () => {
+    let codigoFuncion = []
+    for(var i = 0; i <= 4; i++){
+        codigoFuncion.push(Math.floor(Math.random() * (99 - 1) +1 ))
+        let posiciones = arregloDeCodigos[Math.floor(Math.random() * 2)].sort(function () {return Math.random() - 0.5})
+        codigoFuncion.push(posiciones[0])
+    }
+    return codigoFuncion.join("")
+}
+const generadorCodigo2 = () => {
+    let codigoFuncion = []
+    for(var i = 0; i <= 4; i++){
+        let posiciones = arregloDeCodigos[Math.floor(Math.random() * 2)].sort(function () {return Math.random() - 0.5})
+        codigoFuncion.push(posiciones[0])
+        codigoFuncion.push(Math.floor(Math.random() * (99 - 1) +1 ))
+    }
+    return codigoFuncion.join("")
+}
+
 if (nombre.includes(0) || nombre.includes(1) || nombre.includes(2) || nombre.includes(3) || nombre.includes(4) || nombre.includes(5) || nombre.includes(6) || nombre.includes(7) || nombre.includes(8) || nombre.includes(9) || nombre == ""){
     alert('Ingrese correctamente el nombre')
     return false
@@ -104,7 +138,13 @@ if (nombre.includes(0) || nombre.includes(1) || nombre.includes(2) || nombre.inc
     } else{
         sexo = "Mujer"
     }
-    var sujeto = new Persona(nombre, edad, dni, sexo, peso, altura, nacimiento)
+    let azarCodigo = Math.floor(Math.random() * 2 + 1)
+    if (azarCodigo == 1){
+        codigoUnico = generadorCodigo1()
+    } else {
+        codigoUnico = generadorCodigo2()
+    }
+    var sujeto = new Persona(nombre, edad, dni, sexo, peso, altura, nacimiento, codigoUnico)
     sujetos.push(sujeto)
     document.querySelector('#nombre').toggleAttribute("disabled")
     document.querySelector('#edad').toggleAttribute("disabled")
@@ -222,13 +262,54 @@ botonRegistro.addEventListener('click', () =>{
     crearObjeto()
 })
 
+
+const eliminarFila = (codigo) =>{
+    console.log(codigo)
+    /*const arrayFiltrado = arrayDatos.filter(listado =>{
+        return listado.codigoUnico !== codigo.toString()
+    })
+    arrayDatos = arrayFiltrado;
+    localStorage.setItem("listaGeneracion", JSON.stringify(arrayDatos))
+    window.location.reload()*/
+    /*const generaciones = arrayDatos.find(element => {
+        return element.codigo === codigo;
+    })
+    console.log(generaciones)*/
+    /*if (generaciones.nacimiento >= 1994 && generaciones.nacimiento <= 2010){
+        alert("GEneracion Z")
+    } else if ( generaciones.nacimiento >= 1981 && generaciones.nacimiento <= 1993){
+        alert("Generacion Y")
+    }*/
+}
 const tabla = document.querySelector("#tabla-sujetos")
 
-arrayDatos.forEach(element => {
+const crearFilaIndividuos = () => {
+    arrayDatos.forEach (element => {
+    let generacionLista;
+    let mayorOMenorLista;
+    if (element.nacimiento >= 1994 && element.nacimiento <= 2010){
+        generacionLista = "Generacion Z"
+    } else if (element.nacimiento >= 1981 && element.nacimiento <= 1993){
+        generacionLista = "Generacion Y millennials"
+    } else if (element.nacimiento >= 1969 && element.nacimiento <= 1980){
+        generacionLista = "Generacion X"
+    } else if (element.nacimiento >= 1949 && element.nacimiento <= 1968){
+        generacionLista = "Generacion Baby Boom"
+    } else if (element.nacimiento >= 1930 && element.nacimiento <= 1948){
+        generacionLista = "Generacion Silent Generation"
+    }
+
+    if (element.edad >= 18){
+        mayorOMenorLista = "Mayor de Edad"
+    } else {
+        mayorOMenorLista = "Menor de Edad"
+    }
     tabla.innerHTML += `<tr>
     <td class="border">${element.nombre}</td>
-    <td class="border">${element.nacimiento}</td>
-    <td class="border">${element.edad}</td>
-    <td class="border">Edad: ${element.edad} <br> Sexo: ${element.sexo}<br> DNI: ${element.dni} <br> Peso: ${element.peso} - Altura:${element.altura}</td>
+    <td class="border">${generacionLista}</td>
+    <td class="border">${mayorOMenorLista}</td>
+    <td class="border">Edad: ${element.edad} <br> Sexo: ${element.sexo}<br> DNI: ${element.dni} <br> Peso: ${element.peso} - Altura:${element.altura} <br> Nacimiento: ${element.nacimiento}<button onclick="eliminarFila(${holaMundo})">Eliminar</button></td>
 </tr>`
 })
+}
+crearFilaIndividuos()

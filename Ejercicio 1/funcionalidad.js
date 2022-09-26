@@ -82,7 +82,7 @@ const usuarioNu = document.querySelector('#intentar5')
 
 function adivinar1() {
 
-    var lista = [0, 1, 2, 3];
+    let lista = [0, 1, 2, 3];
     lista.sort(function () { return Math.random() - 0.5 });
     class Jugador {
         constructor (nombre, intentosJugador){
