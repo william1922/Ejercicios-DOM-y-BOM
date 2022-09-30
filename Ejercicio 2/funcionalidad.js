@@ -1,5 +1,4 @@
-console.log("Hola")
-let holaMundo = 45
+let holaMundo = 123;
 let sujetos =[];
 let imagen = document.createElement('img')
 let textonuevo = document.createElement('h1');
@@ -7,7 +6,6 @@ textonuevo.setAttribute("class", "text-center")
 imagen.setAttribute("class", "rounded-5")
 let nodo2 = document.querySelector('.mostradorMetodos')
 let arrayDatos = JSON.parse(localStorage.getItem("listaGeneracion")) || [];
-
 
 const crearObjeto = () =>{
 class Persona {
@@ -271,15 +269,10 @@ const eliminarFila = (codigo) =>{
     arrayDatos = arrayFiltrado;
     localStorage.setItem("listaGeneracion", JSON.stringify(arrayDatos))
     window.location.reload()*/
-    /*const generaciones = arrayDatos.find(element => {
+    const generaciones = arrayDatos.find(element => {
         return element.codigo === codigo;
     })
-    console.log(generaciones)*/
-    /*if (generaciones.nacimiento >= 1994 && generaciones.nacimiento <= 2010){
-        alert("GEneracion Z")
-    } else if ( generaciones.nacimiento >= 1981 && generaciones.nacimiento <= 1993){
-        alert("Generacion Y")
-    }*/
+    console.log(generaciones)
 }
 const tabla = document.querySelector("#tabla-sujetos")
 
@@ -308,8 +301,35 @@ const crearFilaIndividuos = () => {
     <td class="border">${element.nombre}</td>
     <td class="border">${generacionLista}</td>
     <td class="border">${mayorOMenorLista}</td>
-    <td class="border">Edad: ${element.edad} <br> Sexo: ${element.sexo}<br> DNI: ${element.dni} <br> Peso: ${element.peso} - Altura:${element.altura} <br> Nacimiento: ${element.nacimiento}<button onclick="eliminarFila(${holaMundo})">Eliminar</button></td>
+    <td class="border">Edad: ${element.edad} <br> Sexo: ${element.sexo}<br> DNI: ${element.dni} <br> Peso: ${element.peso} - Altura:${element.altura} <br> Nacimiento: ${element.nacimiento}<button onclick="eliminarFila('${element.codigo}')">Eliminar</button></td>
 </tr>`
 })
 }
 crearFilaIndividuos()
+
+//variables
+let repeated;
+//funciones
+ function random() {
+  do {
+    let code = parseInt(Math.random() * 999999);
+    repeated = repeatedCode(code);
+    if (!repeated) {
+      regCode.push(code);
+      return code;
+    } else {
+      repeated = false;
+    }
+  } while (!repeated);
+}
+
+function repeatedCode(code) {
+  for (let i = 0; i < regCode.length; i++) {
+    if (code === regCode[i]) {
+      repeated = true;
+      break;
+    }
+  }
+  return repeated;
+}
+
